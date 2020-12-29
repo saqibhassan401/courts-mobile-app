@@ -1,23 +1,18 @@
 import * as React from 'react';
-import { Text, View, StyleSheet,Button} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
+import {BottomNavigation} from 'react-native-paper';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
-
-// or any pure javascript modules available in npm
-import { Card,BottomNavigation } from 'react-native-paper';
 const MusicRoute = () => <Text>Music</Text>;
-
 const AlbumsRoute = () => <Text>Albums</Text>;
-
 const RecentsRoute = () => <Text>Recents</Text>;
-const App = () => {
+
+const TestResults = () => {
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: 'music', title: 'Music', icon: 'queue-music' },
-        { key: 'albums', title: 'Albums', icon: 'album' },
-        { key: 'recents', title: 'Recents', icon: 'history' },
+        {key: 'music', title: 'Music', icon: 'queue-music'},
+        {key: 'albums', title: 'Albums', icon: 'album'},
+        {key: 'recents', title: 'Recents', icon: 'history'},
     ]);
 
     const renderScene = BottomNavigation.SceneMap({
@@ -43,14 +38,14 @@ const App = () => {
                     onPress={() => Alert.alert('Simple Button pressed')}
                 />
             </View>
-            <View style={styles.btn} >
+            <View style={styles.btn}>
                 <Button
                     title="Press me"
                     onPress={() => Alert.alert('Simple Button pressed')}
                 />
             </View>
             <BottomNavigation
-                navigationState={{ index, routes }}
+                navigationState={{index, routes}}
                 onIndexChange={setIndex}
                 renderScene={renderScene}
             />
@@ -67,20 +62,20 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     paragraph: {
-        textAlign:'right',
-        marginTop:'5px',
-        fontSize:'20px'
+        textAlign: 'right',
+        marginTop: '5px',
+        fontSize: '20px'
     },
-    main:{
-        textAlign:'center',
-        marginTop:'100px',
-        fontSize:'24px'
+    main: {
+        textAlign: 'center',
+        marginTop: '100px',
+        fontSize: '24px'
     },
-    btn:{
-        marginTop:'10px'
+    btn: {
+        marginTop: '10px'
     },
-    btn1:{
-        marginTop:'90px'
+    btn1: {
+        marginTop: '90px'
     }
 });
-export default App;
+export default TestResults;
