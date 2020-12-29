@@ -1,23 +1,18 @@
 import * as React from 'react';
-import { Text, View, StyleSheet,Button,TextInput} from 'react-native';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import Constants from 'expo-constants';
+import {BottomNavigation} from 'react-native-paper';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
-
-// or any pure javascript modules available in npm
-import {BottomNavigation,DataTable } from 'react-native-paper';
 const MusicRoute = () => <Text></Text>;
-
 const AlbumsRoute = () => <Text></Text>;
-
 const RecentsRoute = () => <Text></Text>;
-const App = () => {
+
+const SchoolTest = () => {
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: 'music', title: 'Music', icon: 'queue-music' },
-        { key: 'albums', title: 'Albums', icon: 'album' },
-        { key: 'recents', title: 'Recents', icon: 'history' },
+        {key: 'music', title: 'Music', icon: 'queue-music'},
+        {key: 'albums', title: 'Albums', icon: 'album'},
+        {key: 'recents', title: 'Recents', icon: 'history'},
     ]);
 
     const renderScene = BottomNavigation.SceneMap({
@@ -73,7 +68,7 @@ const App = () => {
                                 onPress={() => Alert.alert('Left button pressed')}
                         />
                     </View>
-                    <View  >
+                    <View>
                         <Button style={styles.btn3}
                                 title="20203541000"
                                 onPress={() => Alert.alert('Right button pressed')}
@@ -87,27 +82,27 @@ const App = () => {
                                 onPress={() => Alert.alert('Left button pressed')}
                         />
                     </View>
-                    <View  >
+                    <View>
                         <Button style={styles.btn3}
                                 title="20203541000"
                                 onPress={() => Alert.alert('Right button pressed')}
                         />
                     </View>
                 </View>
-                <View style={styles.emptyflex} >
-                    <Text style = {styles.text1}>
+                <View style={styles.emptyflex}>
+                    <Text style={styles.text1}>
                         Button
                     </Text>
-                    <Text style = {styles.text2}>
+                    <Text style={styles.text2}>
                         Button
                     </Text>
                 </View>
-                <View style={styles.note} >
-                    <Text >Note
+                <View style={styles.note}>
+                    <Text>Note
                     </Text>
 
                 </View>
-                <View style={styles.textAreaContainer} >
+                <View style={styles.textAreaContainer}>
                     <TextInput
                         style={styles.textArea}
                         underlineColorAndroid="transparent"
@@ -121,13 +116,12 @@ const App = () => {
 
 
             <BottomNavigation
-                navigationState={{ index, routes }}
+                navigationState={{index, routes}}
                 onIndexChange={setIndex}
                 renderScene={renderScene}
             />
 
         </View>
-
 
 
     );
@@ -142,56 +136,54 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     paragraph: {
-        textAlign:'right',
-        marginTop:'5px',
-        fontSize:'20px'
+        textAlign: 'right',
+        marginTop: '5px',
+        fontSize: '20px'
     },
     textAreaContainer: {
         borderColor: 'white',
         borderWidth: 1,
         padding: 5,
-        backgroundColor:'white',
-        width:'233px',
-        marginLeft:'33px',
-        marginBottom:'10px'
+        backgroundColor: 'white',
+        width: '233px',
+        marginLeft: '33px',
+        marginBottom: '10px'
 
     },
     textArea: {
         height: 120,
-        justifyContent:'center',
+        justifyContent: 'center',
 
     },
     note: {
-        marginLeft:'40px',
-        marginTop:'5px',
-        fontSize:'20px'
+        marginLeft: '40px',
+        marginTop: '5px',
+        fontSize: '20px'
     },
-    main:{
-        textAlign:'center',
-        marginTop:'30px',
-        fontSize:'28px'
+    main: {
+        textAlign: 'center',
+        marginTop: '30px',
+        fontSize: '28px'
     },
-    btn:{
-        marginTop:'10px'
+    btn: {
+        marginTop: '10px'
     },
-    btn1:{
-        marginTop:'90px'
+    btn1: {
+        marginTop: '90px'
     },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom:'5px',
-        marginTop:'14px',
-
+        marginBottom: '5px',
+        marginTop: '14px',
 
 
     },
     fixToText1: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom:'5px',
-        marginTop:'5px',
-
+        marginBottom: '5px',
+        marginTop: '5px',
 
 
     },
@@ -199,57 +191,56 @@ const styles = StyleSheet.create({
 
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom:'5px',
-        marginTop:'1px',
-
+        marginBottom: '5px',
+        marginTop: '1px',
 
 
     },
-    emptyflex:{
+    emptyflex: {
         flexDirection: 'row',
-        justifyContent:'center'
+        justifyContent: 'center'
 
     },
-    text1:{
+    text1: {
         borderWidth: 1,
         padding: 25,
         borderColor: 'black',
         backgroundColor: 'red',
-        width:'120px',
-        height:'60px'
+        width: '120px',
+        height: '60px'
     },
-    text2:{
+    text2: {
         borderWidth: 1,
         padding: 25,
         borderColor: 'black',
         backgroundColor: 'grey',
-        marginLeft:'4px',
-        width:'105px',
-        height:'60px',
-        marginBottom:'5px'
+        marginLeft: '4px',
+        width: '105px',
+        height: '60px',
+        marginBottom: '5px'
 
     },
-    main1:{
-        textAlign:'center',
+    main1: {
+        textAlign: 'center',
 
-        fontSize:'14px'
+        fontSize: '14px'
     },
-    main2:{
-        textAlign:'center',
-        marginTop:'2px',
-        fontSize:'14px'
+    main2: {
+        textAlign: 'center',
+        marginTop: '2px',
+        fontSize: '14px'
     },
-    btn4:{
-        marginRight:'10px'
+    btn4: {
+        marginRight: '10px'
     },
-    btn5:{
-        width:'250px',
-        height:'200px',
+    btn5: {
+        width: '250px',
+        height: '200px',
 
     },
     mainbtn: {
-        width:'233px',
-        marginLeft:'35px'
+        width: '233px',
+        marginLeft: '35px'
     }
 });
-export default App;
+export default SchoolTest;
