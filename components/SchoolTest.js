@@ -133,21 +133,21 @@ const styles = StyleSheet.create({
 
         paddingTop: Constants.statusBarHeight,
         backgroundColor: '#ecf0f1',
-        padding: 8,
+        padding: 8
     },
     paragraph: {
         textAlign: 'right',
-        marginTop: '5px',
-        fontSize: '20px'
+        marginTop: 5,
+        fontSize: 20
     },
     textAreaContainer: {
         borderColor: 'white',
         borderWidth: 1,
         padding: 5,
         backgroundColor: 'white',
-        width: '233px',
-        marginLeft: '33px',
-        marginBottom: '10px'
+        width: 233,
+        marginLeft: 33,
+        marginBottom: 10
 
     },
     textArea: {
@@ -156,34 +156,34 @@ const styles = StyleSheet.create({
 
     },
     note: {
-        marginLeft: '40px',
-        marginTop: '5px',
-        fontSize: '20px'
+        marginLeft: 40,
+        marginTop: 5,
+        fontSize: 20
     },
     main: {
         textAlign: 'center',
-        marginTop: '30px',
-        fontSize: '28px'
+        marginTop: 30,
+        fontSize: 28
     },
     btn: {
-        marginTop: '10px'
+        marginTop: 10
     },
     btn1: {
-        marginTop: '90px'
+        marginTop: 90
     },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: '5px',
-        marginTop: '14px',
+        marginBottom: 5,
+        marginTop: 14
 
 
     },
     fixToText1: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: '5px',
-        marginTop: '5px',
+        marginBottom: 5,
+        marginTop: 5
 
 
     },
@@ -191,8 +191,8 @@ const styles = StyleSheet.create({
 
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: '5px',
-        marginTop: '1px',
+        marginBottom: 5,
+        marginTop: 1
 
 
     },
@@ -206,41 +206,41 @@ const styles = StyleSheet.create({
         padding: 25,
         borderColor: 'black',
         backgroundColor: 'red',
-        width: '120px',
-        height: '60px'
+        width: 120,
+        height: 60
     },
     text2: {
         borderWidth: 1,
         padding: 25,
         borderColor: 'black',
         backgroundColor: 'grey',
-        marginLeft: '4px',
-        width: '105px',
-        height: '60px',
-        marginBottom: '5px'
+        marginLeft: 4,
+        width: 105,
+        height: 60,
+        marginBottom: 5
 
     },
     main1: {
         textAlign: 'center',
 
-        fontSize: '14px'
+        fontSize: 14
     },
     main2: {
         textAlign: 'center',
-        marginTop: '2px',
-        fontSize: '14px'
+        marginTop: 2,
+        fontSize: 14
     },
     btn4: {
-        marginRight: '10px'
+        marginRight: 10
     },
     btn5: {
-        width: '250px',
-        height: '200px',
+        width: 250,
+        height: 200,
 
     },
     mainbtn: {
-        width: '233px',
-        marginLeft: '35px'
+        width: 233,
+        marginLeft: 35
     }
 });
 export default SchoolTest;

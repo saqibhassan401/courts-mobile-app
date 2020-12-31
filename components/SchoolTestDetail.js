@@ -84,27 +84,27 @@ const styles = StyleSheet.create({
 
         borderColor: 'black',
         backgroundColor: 'grey',
-        marginLeft: '4px',
-        width: '310px',
-        height: '50px',
-        marginBottom: '1px',
-        marginTop: '10px'
+        marginLeft: 4,
+        width: 310,
+        height: 50,
+        marginBottom: 1,
+        marginTop: 10
     },
     paragraph: {
         textAlign: 'right',
-        marginTop: '5px',
-        fontSize: '20px'
+        marginTop: 5,
+        fontSize: 20
     },
     main: {
         textAlign: 'center',
-        marginTop: '30px',
-        fontSize: '24px'
+        marginTop: 30,
+        fontSize: 24
     },
     btn: {
-        marginTop: '10px'
+        marginTop: 10
     },
     btn1: {
-        marginTop: '90px'
+        marginTop: 90
     }
 });
 export default SchoolTestDetail;

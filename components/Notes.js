@@ -1,30 +1,19 @@
 import * as React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import Constants from 'expo-constants';
-import {BottomNavigation} from 'react-native-paper';
+import {LinearGradient} from "expo-linear-gradient";
 
-const MusicRoute = () => <Text></Text>;
-const AlbumsRoute = () => <Text></Text>;
-const RecentsRoute = () => <Text></Text>;
-
-const Notes = () => {
-    const [text, setText] = React.useState('');
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-        {key: 'music', title: 'Music', icon: 'queue-music'},
-        {key: 'albums', title: 'Albums', icon: 'album'},
-        {key: 'recents', title: 'Recents', icon: 'history'},
-    ]);
-
-    const renderScene = BottomNavigation.SceneMap({
-        music: MusicRoute,
-        albums: AlbumsRoute,
-        recents: RecentsRoute,
-    });
+const Notes = (props) => {
     return (
         <View style={styles.container}>
-            <View>
+            <LinearGradient
+                // Background Linear Gradient
+                colors={['#33849B', '#1E4F5D', '#14343D']}
+                style={styles.background}
+            />
+            <View >
                 <Text style={styles.paragraph}>
+                    <Image source={require('../assets/user.png')} />
                     Brian
                 </Text>
             </View>
@@ -35,7 +24,7 @@ const Notes = () => {
             </View>
             <View style={styles.input1}>
                 <TextInput
-                    style={{height: 30, borderColor: 'gray', borderWidth: 1, marginRight: '5px', width: '50%'}}
+                    style={{height: 30, borderColor: 'gray', borderWidth: 1, marginRight: 5, width: '50%'}}
                     onChangeText={text => onChangeText(text)}
 
                 />
@@ -76,12 +65,6 @@ const Notes = () => {
 
             </View>
 
-
-            <BottomNavigation
-                navigationState={{index, routes}}
-                onIndexChange={setIndex}
-                renderScene={renderScene}
-            />
         </View>
 
     );
@@ -90,31 +73,40 @@ const Notes = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         paddingTop: Constants.statusBarHeight,
         backgroundColor: '#ecf0f1',
         padding: 8,
     },
     input1: {
         flexDirection: 'row',
-        padding: `5px 10px`,
         justifyContent: 'center'
     },
     paragraph: {
-        textAlign: 'right',
-        marginTop: '5px',
-        fontSize: '20px'
+        alignSelf:'flex-end',
+        marginTop: 50,
+        fontSize: 20,
+        marginRight:30,
+        color:'white'
+    },
+    background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
     },
     main: {
         textAlign: 'center',
-        marginTop: '30px',
-        fontSize: '24px'
+        marginTop: 80,
+        fontSize: 35,
+        color:'white',
+        fontWeight: "bold"
     },
     btn: {
-        marginTop: '10px'
+        marginTop: 10
     },
     btn1: {
-        marginTop: '90px'
+        marginTop: 90
     }
 });
 export default Notes;

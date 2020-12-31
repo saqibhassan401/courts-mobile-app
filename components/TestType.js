@@ -1,29 +1,53 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
-import {BottomNavigation} from 'react-native-paper';
+import {LinearGradient} from "expo-linear-gradient";
 
-const MusicRoute = () => <Text></Text>;
-const AlbumsRoute = () => <Text></Text>;
-const RecentsRoute = () => <Text></Text>;
 
 const TestType = () => {
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-        {key: 'music', title: 'Music', icon: 'queue-music'},
-        {key: 'albums', title: 'Albums', icon: 'album'},
-        {key: 'recents', title: 'Recents', icon: 'history'},
-    ]);
 
-    const renderScene = BottomNavigation.SceneMap({
-        music: MusicRoute,
-        albums: AlbumsRoute,
-        recents: RecentsRoute,
-    });
+    const items = [
+        {
+            'Test':"13123",
+            'TestName':'Calculus',
+            'TestDate':'20201123'
+        },
+        {
+            'Test':"42343",
+            'TestName':'Algebra',
+            'TestDate':'20201123'
+        },
+        {
+            'Test':"12323",
+            'TestName':'Integral',
+            'TestDate':'20201123'
+        },
+        {
+            'Test':"43553",
+            'TestName':'Derivation',
+            'TestDate':'20201123'
+        },
+        {
+            'Test':"456456",
+            'TestName':'Calculus',
+            'TestDate':'20201123'
+        },
+        {
+            'Test':"657567",
+            'TestName':'Calculus',
+            'TestDate':'20201123'
+        },
+    ]
     return (
         <View style={styles.container}>
+            <LinearGradient
+                // Background Linear Gradient
+                colors={['#33849B', '#1E4F5D', '#14343D']}
+                style={styles.background}
+            />
             <View>
                 <Text style={styles.paragraph}>
+                    <Image source={require('../assets/user.png')} />
                     Brian
                 </Text>
             </View>
@@ -33,134 +57,90 @@ const TestType = () => {
                 </Text>
             </View>
             <View>
-                <View style={styles.fixToText}>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="Left btunn"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <Button
-                        title="Right button"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                    <Button
-                        title="Left btunn"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
+                <View style={styles.btn1} >
+                    <Text style={styles.Test}>Test #</Text>
+                    <Text style={styles.Test}>Test Name</Text>
+                    <Text style={styles.Test}>Test Date</Text>
                 </View>
-                <View style={styles.fixToText}>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="Left btunn"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <Button
-                        title="Right button"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                    <Button
-                        title="Left btunn"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                </View>
-                <View style={styles.fixToText}>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="Left btunn"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <Button
-                        title="Right button"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                    <Button
-                        title="Left btunn"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                </View>
-
-                <View style={styles.fixToText}>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="Left btunn"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <Button
-                        title="Right button"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                    <Button
-                        title="Left btunn"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                </View>
-                <View style={styles.fixToText}>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="Left btunn"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <Button
-                        title="Right button"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                    <Button
-                        title="Left btunn"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-                </View>
-
-
+                {
+                    items.map((item,index)=>(
+                        <View style={styles.btn2} key={index} >
+                            <Text style={styles.Test2}>{item.Test}</Text>
+                            <Text style={styles.Test2}>{item.TestName}</Text>
+                            <Text style={styles.Test2}>{item.TestDate}</Text>
+                        </View>
+                    ))
+                }
             </View>
-
-            <BottomNavigation
-                navigationState={{index, routes}}
-                onIndexChange={setIndex}
-                renderScene={renderScene}
-            />
-
         </View>
-
-
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         paddingTop: Constants.statusBarHeight,
         backgroundColor: '#ecf0f1',
         padding: 8,
     },
+    background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+    },
     paragraph: {
-        textAlign: 'right',
-        marginTop: '5px',
-        fontSize: '20px'
+        alignSelf:'flex-end',
+        marginTop: 50,
+        fontSize: 20,
+        marginRight:30,
+        color:'white'
     },
     main: {
         textAlign: 'center',
-        marginTop: '100px',
-        fontSize: '24px'
+        marginTop: 80,
+        fontSize: 35,
+        color:'white',
+        fontWeight: "bold"
     },
     btn: {
-        marginTop: '10px'
+        marginTop: 10
     },
     btn1: {
-        marginTop: '90px'
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        marginTop: 40,
+        paddingLeft:10,
+        paddingRight:10,
+        fontWeight: "bold"
+    },
+    btn2:{
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        paddingLeft:10,
+        paddingRight:10,
+        paddingTop:10,
+        fontWeight: "bold"
     },
     fixToText: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: '20px'
-
-
+        marginBottom: 20
     },
-    btn3: {},
+    Test:{
+     color:'white',
+        backgroundColor: '#94CAD1',
+        padding:9,
+        width:'30%',
+        fontSize:18
+    },
+    Test2:{
+        color:'white',
+        backgroundColor: '#3589A1',
+        padding:9,
+        width:'30%',
+        fontSize:18
+    }
 });
 export default TestType;
