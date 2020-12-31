@@ -9,10 +9,12 @@ import { Config } from './config';
 import Login from './components/login';
 import TestResults from './components/TestResults';
 import TestType from './components/TestType';
-import Notes from "./components/Notes";
+import NotesList from "./components/NotesList";
+import NotesEdit from "./components/NotesEdit";
 import SchoolTest from './components/SchoolTest';
 import SchoolTestDetail from './components/SchoolTestDetail';
 import ClassAttendance from "./components/ClassAttendance";
+import ResetPassword from "./components/ResetPassword";
 axios.defaults.baseURL = Config.api_url;
 export default function App() {
     return (
@@ -23,7 +25,7 @@ export default function App() {
                 }}>
                 <Stack.Screen
                     name="login"
-                    component={Login}
+                    component={SchoolTest}
                 />
                 <Stack.Screen
                     name="TestResults"
@@ -34,8 +36,8 @@ export default function App() {
                     component={TestType}
                 />
                 <Stack.Screen
-                    name="Notes"
-                    component={Notes}
+                    name="NotesList"
+                    component={NotesList}
                 />
                 <Stack.Screen
                     name="SchoolTest"
@@ -48,6 +50,14 @@ export default function App() {
                 <Stack.Screen
                     name="ClassAttendance"
                     component={ClassAttendance}
+                />
+                <Stack.Screen
+                    name="NotesEdit"
+                    component={NotesEdit}
+                />
+                <Stack.Screen
+                    name="ResetPassword"
+                    component={ResetPassword}
                 />
 
             </Stack.Navigator>

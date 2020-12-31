@@ -1,246 +1,109 @@
 import * as React from 'react';
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
-import Constants from 'expo-constants';
-import {BottomNavigation} from 'react-native-paper';
+import { Image, StyleSheet, Text, View} from 'react-native';
+import {LinearGradient} from "expo-linear-gradient";
 
-const MusicRoute = () => <Text></Text>;
-const AlbumsRoute = () => <Text></Text>;
-const RecentsRoute = () => <Text></Text>;
 
-const SchoolTest = () => {
-    const [index, setIndex] = React.useState(0);
-    const [routes] = React.useState([
-        {key: 'music', title: 'Music', icon: 'queue-music'},
-        {key: 'albums', title: 'Albums', icon: 'album'},
-        {key: 'recents', title: 'Recents', icon: 'history'},
-    ]);
+const ClassAttendance = () => {
 
-    const renderScene = BottomNavigation.SceneMap({
-        music: MusicRoute,
-        albums: AlbumsRoute,
-        recents: RecentsRoute,
-    });
     return (
         <View style={styles.container}>
-            <View>
+            <LinearGradient
+                // Background Linear Gradient
+                colors={['#33849B', '#1E4F5D', '#14343D']}
+                style={styles.background}
+            />
+            <View >
                 <Text style={styles.paragraph}>
+                    <Image source={require('../assets/user.png')} />
                     Brian
                 </Text>
             </View>
             <View>
                 <Text style={styles.main}>
-                    School Test
-                </Text>
-                <Text style={styles.main1}>
-                    Class Name :LinPm
-                </Text>
-                <Text style={styles.main2}>
-                    December 25-20
+                    SCHOOL TEST
                 </Text>
             </View>
             <View>
-                <View style={styles.fixToText}>
-                    <View style={styles.btn4}>
-                        <Button style={styles.btn3}
-                                title="Midterm Exam"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <View>
-                        <Button
-                            title="20203541000"
-                            onPress={() => Alert.alert('Right button pressed')}
-                        />
-                    </View>
-                </View>
-                <View style={styles.mainbtn}>
-
-                    <Button
-                        title="20203541000"
-                        onPress={() => Alert.alert('Right button pressed')}
-                    />
-
-                </View>
-                <View style={styles.fixToText1}>
-                    <View style={styles.btn4}>
-                        <Button style={styles.btn3}
-                                title="Midterm Exam"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="20203541000"
-                                onPress={() => Alert.alert('Right button pressed')}
-                        />
-                    </View>
-                </View>
-                <View style={styles.fixTo1}>
-                    <View style={styles.btn4}>
-                        <Button style={styles.btn3}
-                                title="Midterm Exam"
-                                onPress={() => Alert.alert('Left button pressed')}
-                        />
-                    </View>
-                    <View>
-                        <Button style={styles.btn3}
-                                title="20203541000"
-                                onPress={() => Alert.alert('Right button pressed')}
-                        />
-                    </View>
-                </View>
-                <View style={styles.emptyflex}>
-                    <Text style={styles.text1}>
-                        Button
-                    </Text>
-                    <Text style={styles.text2}>
-                        Button
-                    </Text>
-                </View>
-                <View style={styles.note}>
-                    <Text>Note
-                    </Text>
-
-                </View>
-                <View style={styles.textAreaContainer}>
-                    <TextInput
-                        style={styles.textArea}
-                        underlineColorAndroid="transparent"
-                        placeholder="Type something"
-                        placeholderTextColor="grey"
-                        numberOfLines={10}
-                        multiline={true}
-                    />
-                </View>
+                <Text style={styles.classroomName}>
+                    Classroom Name: Luxpm
+                </Text>
             </View>
-
-
-            <BottomNavigation
-                navigationState={{index, routes}}
-                onIndexChange={setIndex}
-                renderScene={renderScene}
-            />
-
+            <View>
+                <Text style={styles.classroomName}>
+                    Dec 20, 2020
+                </Text>
+            </View>
+            <View style={styles.btn2}>
+                {
+                    items.map((item,index)=>(
+                        <View style={styles.btn1} key={index}>
+                            <Text style={styles.attendance}>{item.Tile}</Text>
+                            <View style={styles.dropdownIcon}>
+                                <Image source={require('../assets/deopdownicon.png')} />
+                            </View>
+                        </View>
+                    ))
+                }
+            </View>
         </View>
-
-
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
-        padding: 8
+        backgroundColor: '#2A5A56',
     },
     paragraph: {
-        textAlign: 'right',
-        marginTop: 5,
-        fontSize: 20
-    },
-    textAreaContainer: {
-        borderColor: 'white',
-        borderWidth: 1,
-        padding: 5,
-        backgroundColor: 'white',
-        width: 233,
-        marginLeft: 33,
-        marginBottom: 10
-
-    },
-    textArea: {
-        height: 120,
-        justifyContent: 'center',
-
-    },
-    note: {
-        marginLeft: 40,
-        marginTop: 5,
-        fontSize: 20
+        alignSelf:'flex-end',
+        marginTop: 50,
+        fontSize: 20,
+        marginRight:30,
+        color:'white'
     },
     main: {
         textAlign: 'center',
-        marginTop: 30,
-        fontSize: 28
+        marginTop: 80,
+        fontSize: 35,
+        color:'white',
+        fontWeight: "bold"
+    },
+    classroomName:{
+        textAlign: 'center',
+        color:'white',
+        fontSize:20,
+        marginTop: 30
+    },
+    background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
     },
     btn: {
         marginTop: 10
     },
     btn1: {
-        marginTop: 90
-    },
-    fixToText: {
+        alignSelf:'center',
+        backgroundColor: '#3589A1',
+        marginTop:5,
+        width:'90%',
+        color:'white',
+        padding:6,
         flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: 5,
-        marginTop: 14
-
-
+        justifyContent: "space-between"
     },
-    fixToText1: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: 5,
-        marginTop: 5
-
-
+    btn2:{
+        paddingTop:20
     },
-    fixTo1: {
-
-        flexDirection: 'row',
-        justifyContent: 'center',
-        marginBottom: 5,
-        marginTop: 1
-
-
+    attendance:{
+        color:'white',
+        fontSize: 18,
     },
-    emptyflex: {
-        flexDirection: 'row',
-        justifyContent: 'center'
-
-    },
-    text1: {
-        borderWidth: 1,
-        padding: 25,
-        borderColor: 'black',
-        backgroundColor: 'red',
-        width: 120,
-        height: 60
-    },
-    text2: {
-        borderWidth: 1,
-        padding: 25,
-        borderColor: 'black',
-        backgroundColor: 'grey',
-        marginLeft: 4,
-        width: 105,
-        height: 60,
-        marginBottom: 5
-
-    },
-    main1: {
-        textAlign: 'center',
-
-        fontSize: 14
-    },
-    main2: {
-        textAlign: 'center',
-        marginTop: 2,
-        fontSize: 14
-    },
-    btn4: {
-        marginRight: 10
-    },
-    btn5: {
-        width: 250,
-        height: 200,
-
-    },
-    mainbtn: {
-        width: 233,
-        marginLeft: 35
+    dropdownIcon:{
+        marginRight:10,
+        marginTop:3
     }
 });
-export default SchoolTest;
+export default ClassAttendance;
