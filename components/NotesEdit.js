@@ -14,13 +14,12 @@ const NotesEdit = (props) => {
     return (
         <View style={styles.container}>
             <LinearGradient
-                // Background Linear Gradient
                 colors={['#33849B', '#1E4F5D', '#14343D']}
                 style={styles.background}
             />
-            <View >
+            <View>
                 <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')} />
+                    <Image source={require('../assets/user.png')}/>
                     Brian
                 </Text>
             </View>
@@ -30,18 +29,18 @@ const NotesEdit = (props) => {
                 </Text>
             </View>
             <View style={styles.inputFields}>
-            <View style={styles.inputP}>
-                <TextInput
-                    style={styles.Inputs}
-                    onChangeText={text => onChangeDate(text)}
-                    value={Date}
-                />
-                <TextInput
-                    style={styles.Inputs}
-                    onChangeText={text => onChangeTime(text)}
-                    value={Time}
-                />
-            </View>
+                <View style={styles.inputP}>
+                    <TextInput
+                        style={styles.Inputs}
+                        onChangeText={text => onChangeDate(text)}
+                        value={Date}
+                    />
+                    <TextInput
+                        style={styles.Inputs}
+                        onChangeText={text => onChangeTime(text)}
+                        value={Time}
+                    />
+                </View>
                 <TextInput
                     style={styles.InputSubject}
                     onChangeText={text => onChangeSubject(text)}
@@ -53,10 +52,10 @@ const NotesEdit = (props) => {
                     value={Title}
                 />
                 <View style={styles.InputBox}>
-                <TextInput
-                    onChangeText={text => onChangeTextBox(text)}
-                    value={TextBox}
-                />
+                    <TextInput
+                        onChangeText={text => onChangeTextBox(text)}
+                        value={TextBox}
+                    />
                 </View>
             </View>
         </View>
@@ -72,11 +71,11 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     paragraph: {
-        alignSelf:'flex-end',
+        alignSelf: 'flex-end',
         marginTop: 50,
         fontSize: 20,
-        marginRight:30,
-        color:'white'
+        marginRight: 30,
+        color: 'white'
     },
     background: {
         position: 'absolute',
@@ -89,43 +88,43 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 50,
         fontSize: 35,
-        color:'white',
+        color: 'white',
         fontWeight: "bold"
     },
-    inputP:{
+    inputP: {
         flexDirection: 'row',
         justifyContent: 'center',
     },
-    inputFields:{
-        alignItems:'center',
+    inputFields: {
+        alignItems: 'center',
         backgroundColor: '#1B5573',
-        marginTop:30,
+        marginTop: 30,
     },
-    Inputs:{
-        marginTop:15,
-        backgroundColor:'#94CAD1',
-        color:'#767B7B',
-        padding:10,
-        width:"45%",
-        marginLeft:10
+    Inputs: {
+        marginTop: 15,
+        backgroundColor: '#94CAD1',
+        color: '#767B7B',
+        padding: 10,
+        width: "45%",
+        marginLeft: 10
     },
-    InputSubject:{
-        marginTop:15,
-        backgroundColor:'#94CAD1',
-        color:'#767B7B',
-        padding:10,
-        width:"92%",
-        marginLeft:10
+    InputSubject: {
+        marginTop: 15,
+        backgroundColor: '#94CAD1',
+        color: '#767B7B',
+        padding: 10,
+        width: "92%",
+        marginLeft: 10
     },
-    InputBox:{
+    InputBox: {
         textAlignVertical: 'top',
-        marginTop:15,
-        backgroundColor:'white',
-        color:'#767B7B',
-        padding:10,
-        width:"92%",
-        height:'50%',
-        marginLeft:10
+        marginTop: 15,
+        backgroundColor: 'white',
+        color: '#767B7B',
+        padding: 10,
+        width: "92%",
+        height: '50%',
+        marginLeft: 10
     }
 });
 export default NotesEdit;

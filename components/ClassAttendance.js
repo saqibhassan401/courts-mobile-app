@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
 
 
@@ -7,56 +7,55 @@ const ClassAttendance = () => {
 
     const items = [
         {
-            "Tile":"Attendance"
+            "Tile": "Attendance"
         },
         {
-            "Tile":"Homework"
+            "Tile": "Homework"
         },
         {
-            "Tile":"Answers"
+            "Tile": "Answers"
         },
         {
-            "Tile":"Binder"
+            "Tile": "Binder"
         },
         {
-            "Tile":"DT"
+            "Tile": "DT"
         },
         {
-            "Tile":"Mission"
+            "Tile": "Mission"
         },
         {
-            "Tile":"DT"
+            "Tile": "DT"
         },
         {
-            "Tile":"Presentation"
+            "Tile": "Presentation"
         },
         {
-            "Tile":"Status"
+            "Tile": "Status"
         },
         {
-            "Tile":"Attitude"
+            "Tile": "Attitude"
         },
         {
-            "Tile":"Assignment"
+            "Tile": "Assignment"
         },
         {
-            "Tile":"Note"
+            "Tile": "Note"
         },
         {
-            "Tile":"Progress"
+            "Tile": "Progress"
         }
     ]
 
     return (
         <View style={styles.container}>
             <LinearGradient
-                // Background Linear Gradient
                 colors={['#33849B', '#1E4F5D', '#14343D']}
                 style={styles.background}
             />
-            <View >
+            <View>
                 <Text style={styles.paragraph}>
-                        <Image source={require('../assets/user.png')} />
+                    <Image source={require('../assets/user.png')}/>
                     Brian
                 </Text>
             </View>
@@ -76,17 +75,17 @@ const ClassAttendance = () => {
                 </Text>
             </View>
             <View style={styles.btn2}>
-            {
-                items.map((item,index)=>(
-                    <View style={styles.btn1} key={index}>
-                        <Text style={styles.attendance}>{item.Tile}</Text>
-                        <View style={styles.dropdownIcon}>
-                            <Image source={require('../assets/deopdownicon.png')} />
+                {
+                    items.map((item, index) => (
+                        <View style={styles.btn1} key={index}>
+                            <Text style={styles.attendance}>{item.Tile}</Text>
+                            <View style={styles.dropdownIcon}>
+                                <Image source={require('../assets/deopdownicon.png')}/>
+                            </View>
                         </View>
-                    </View>
-                ))
-            }
-                </View>
+                    ))
+                }
+            </View>
         </View>
     );
 }
@@ -97,23 +96,23 @@ const styles = StyleSheet.create({
         backgroundColor: '#2A5A56',
     },
     paragraph: {
-        alignSelf:'flex-end',
+        alignSelf: 'flex-end',
         marginTop: 50,
         fontSize: 20,
-        marginRight:30,
-        color:'white'
+        marginRight: 30,
+        color: 'white'
     },
     main: {
         textAlign: 'center',
         marginTop: 80,
         fontSize: 35,
-        color:'white',
+        color: 'white',
         fontWeight: "bold"
     },
-    classroomName:{
+    classroomName: {
         textAlign: 'center',
-        color:'white',
-        fontSize:20,
+        color: 'white',
+        fontSize: 20,
         marginTop: 30
     },
     background: {
@@ -127,25 +126,25 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     btn1: {
-        alignSelf:'center',
+        alignSelf: 'center',
         backgroundColor: '#3589A1',
-        marginTop:5,
-        width:'90%',
-        color:'white',
-        padding:6,
+        marginTop: 5,
+        width: '90%',
+        color: 'white',
+        padding: 6,
         flexDirection: 'row',
         justifyContent: "space-between"
     },
-    btn2:{
-      paddingTop:20
+    btn2: {
+        paddingTop: 20
     },
-    attendance:{
-        color:'white',
+    attendance: {
+        color: 'white',
         fontSize: 18,
     },
-    dropdownIcon:{
-        marginRight:10,
-        marginTop:3
+    dropdownIcon: {
+        marginRight: 10,
+        marginTop: 3
     }
 });
 export default ClassAttendance;

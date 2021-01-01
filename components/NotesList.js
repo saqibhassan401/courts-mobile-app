@@ -7,13 +7,12 @@ const NotesList = (props) => {
     return (
         <View style={styles.container}>
             <LinearGradient
-                // Background Linear Gradient
                 colors={['#33849B', '#1E4F5D', '#14343D']}
                 style={styles.background}
             />
-            <View >
+            <View>
                 <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')} />
+                    <Image source={require('../assets/user.png')}/>
                     Brian
                 </Text>
             </View>
@@ -65,11 +64,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     paragraph: {
-        alignSelf:'flex-end',
+        alignSelf: 'flex-end',
         marginTop: 50,
         fontSize: 20,
-        marginRight:30,
-        color:'white'
+        marginRight: 30,
+        color: 'white'
     },
     background: {
         position: 'absolute',
@@ -82,7 +81,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 50,
         fontSize: 35,
-        color:'white',
+        color: 'white',
         fontWeight: "bold"
     },
     btn: {
@@ -91,29 +90,29 @@ const styles = StyleSheet.create({
     btn1: {
         marginTop: 90
     },
-    inputP:{
+    inputP: {
         backgroundColor: '#307E94',
-        marginTop:30,
+        marginTop: 30,
     },
-    assignmentSection:{
-        alignSelf:'center',
+    assignmentSection: {
+        alignSelf: 'center',
         backgroundColor: '#94CAD1',
-        marginTop:20,
-        width:'95%',
-        paddingBottom:10
+        marginTop: 20,
+        width: '95%',
+        paddingBottom: 10
     },
-    assignmentSectionText:{
-        marginTop:8,
-        textAlign:'center',
-        color:'white',
-        fontSize:17,
-        fontWeight:'bold'
+    assignmentSectionText: {
+        marginTop: 8,
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 17,
+        fontWeight: 'bold'
     },
-    pagination:{
-        marginTop:20,
-        marginBottom:10,
-        fontSize:18,
-        fontWeight:'bold'
+    pagination: {
+        marginTop: 20,
+        marginBottom: 10,
+        fontSize: 18,
+        fontWeight: 'bold'
     }
 });
 export default NotesList;

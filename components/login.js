@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import {StatusBar} from 'expo-status-bar';
+import React, {useState} from 'react';
 import 'react-native-gesture-handler';
 import {
     Button,
@@ -12,12 +12,12 @@ import {
 } from 'react-native';
 import * as SecureStore from 'expo-secure-store';
 import axios from 'axios';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Config } from '../config';
+import {LinearGradient} from 'expo-linear-gradient';
+import {Config} from '../config';
 
 axios.defaults.baseURL = Config.api_url;
 
-export default function Login (props) {
+export default function Login(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -31,7 +31,7 @@ export default function Login (props) {
 
         axios
             .post(`/signin`, data)
-            .then(({ data }) => {
+            .then(({data}) => {
                 if (data) {
                     if (data.success) {
                         console.log('succes', data);
@@ -54,45 +54,45 @@ export default function Login (props) {
                 setError('Email or Password are incorrect !');
             });
     };
-    if (succes){
+    if (succes) {
         props.navigation.navigate('ClassAttendance')
-    };
+    }
+    ;
     return (
-            <View style={styles.container}>
-                <LinearGradient
-                    // Background Linear Gradient
-                    colors={['#212558', '#204556', '#2A5A56']}
-                    style={styles.background}
+        <View style={styles.container}>
+            <LinearGradient
+                colors={['#212558', '#204556', '#2A5A56']}
+                style={styles.background}
+            />
+            <Image style={styles.image} source={require('../assets/icon.png')}/>
+
+            <StatusBar style="light"/>
+            <Text style={styles.error}>{error}</Text>
+            <View style={styles.inputView}>
+                <TextInput
+                    style={styles.TextInput}
+                    placeholder="E-mail..."
+                    autoCapitalize="none"
+                    placeholderTextColor="white"
+                    onChangeText={(email) => setEmail(email)}
                 />
-                <Image style={styles.image} source={require('../assets/icon.png')} />
-
-                <StatusBar style="light" />
-                <Text style={styles.error}>{error}</Text>
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.TextInput}
-                        placeholder="E-mail..."
-                        autoCapitalize="none"
-                        placeholderTextColor="white"
-                        onChangeText={(email) => setEmail(email)}
-                    />
-                </View>
-
-                <View style={styles.inputView}>
-                    <TextInput
-                        style={styles.TextInput}
-                        placeholder="Password..."
-                        placeholderTextColor="white"
-                        secureTextEntry={true}
-                        autoCapitalize="none"
-                        onChangeText={(password) => setPassword(password)}
-                    />
-                </View>
-
-                <TouchableOpacity onPress={() => signIn()} style={styles.loginBtn}>
-                    <Text style={styles.loginText}>LOGIN</Text>
-                </TouchableOpacity>
             </View>
+
+            <View style={styles.inputView}>
+                <TextInput
+                    style={styles.TextInput}
+                    placeholder="Password..."
+                    placeholderTextColor="white"
+                    secureTextEntry={true}
+                    autoCapitalize="none"
+                    onChangeText={(password) => setPassword(password)}
+                />
+            </View>
+
+            <TouchableOpacity onPress={() => signIn()} style={styles.loginBtn}>
+                <Text style={styles.loginText}>LOGIN</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
