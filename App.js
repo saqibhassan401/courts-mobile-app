@@ -25,7 +25,7 @@ export default function App() {
                 }}>
                 <Stack.Screen
                     name="login"
-                    component={SchoolTest}
+                    component={Login}
                 />
                 <Stack.Screen
                     name="TestResults"
