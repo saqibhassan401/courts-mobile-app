@@ -34,16 +34,14 @@ const ClassAttendance = () => {
                 </Text>
             </View>
             <View style={styles.btn2}>
-                {
-                    items.map((item,index)=>(
-                        <View style={styles.btn1} key={index}>
-                            <Text style={styles.attendance}>{item.Tile}</Text>
+                        <View style={styles.btn1} >
                             <View style={styles.dropdownIcon}>
                                 <Image source={require('../assets/deopdownicon.png')} />
                             </View>
+                            <Text style={styles.attendance}>
+                                Check my test score
+                            </Text>
                         </View>
-                    ))
-                }
             </View>
         </View>
     );
@@ -86,13 +84,12 @@ const styles = StyleSheet.create({
     },
     btn1: {
         alignSelf:'center',
-        backgroundColor: '#3589A1',
+        backgroundColor: '#05345C',
         marginTop:5,
         width:'90%',
         color:'white',
         padding:6,
         flexDirection: 'row',
-        justifyContent: "space-between"
     },
     btn2:{
         paddingTop:20
@@ -100,6 +97,8 @@ const styles = StyleSheet.create({
     attendance:{
         color:'white',
         fontSize: 18,
+        fontWeight:'bold',
+        textAlign:'center'
     },
     dropdownIcon:{
         marginRight:10,
