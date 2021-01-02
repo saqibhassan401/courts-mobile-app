@@ -1,6 +1,7 @@
 import {StatusBar} from 'expo-status-bar';
 import React, {useState} from 'react';
 import 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     Button,
     StyleSheet,
@@ -55,9 +56,13 @@ export default function Login(props) {
             });
     };
     if (succes) {
-        props.navigation.navigate('ClassAttendance')
+        props.navigation.replace('ClassAttendance')
+    };
+    const ResetPassword =()=>{
+        props.navigation.navigate('ResetPassword')
     }
-    ;
+
+
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -71,7 +76,7 @@ export default function Login(props) {
             <View style={styles.inputView}>
                 <TextInput
                     style={styles.TextInput}
-                    placeholder="E-mail..."
+                    placeholder="E-mail"
                     autoCapitalize="none"
                     placeholderTextColor="white"
                     onChangeText={(email) => setEmail(email)}
@@ -81,7 +86,7 @@ export default function Login(props) {
             <View style={styles.inputView}>
                 <TextInput
                     style={styles.TextInput}
-                    placeholder="Password..."
+                    placeholder="Password"
                     placeholderTextColor="white"
                     secureTextEntry={true}
                     autoCapitalize="none"
@@ -92,6 +97,12 @@ export default function Login(props) {
             <TouchableOpacity onPress={() => signIn()} style={styles.loginBtn}>
                 <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>
+            <View style={styles.forgotPassword}>
+                <Text style={styles.loginText}>Forgot your password ? </Text>
+                <TouchableOpacity onPress={() => ResetPassword()} >
+                    <Text style={styles.loginText}>Click here</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -102,6 +113,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#2A5A56',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    forgotPassword:{
+        paddingTop:20,
+        flexDirection:'row'
     },
     background: {
         position: 'absolute',

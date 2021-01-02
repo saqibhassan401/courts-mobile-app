@@ -3,6 +3,8 @@ import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-
 import Constants from 'expo-constants';
 import {LinearGradient} from "expo-linear-gradient";
 import {Input} from "react-native-elements";
+import Header from "./header";
+import Footer from "./footer";
 
 const NotesEdit = (props) => {
     const [Date, onChangeDate] = React.useState('Date');
@@ -18,10 +20,7 @@ const NotesEdit = (props) => {
                 style={styles.background}
             />
             <View>
-                <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')}/>
-                    Brian
-                </Text>
+                <Header/>
             </View>
             <View>
                 <Text style={styles.main}>
@@ -58,6 +57,7 @@ const NotesEdit = (props) => {
                     />
                 </View>
             </View>
+            <Footer/>
         </View>
 
     );
@@ -69,13 +69,6 @@ const styles = StyleSheet.create({
         paddingTop: Constants.statusBarHeight,
         backgroundColor: '#ecf0f1',
         padding: 8,
-    },
-    paragraph: {
-        alignSelf: 'flex-end',
-        marginTop: 50,
-        fontSize: 20,
-        marginRight: 30,
-        color: 'white'
     },
     background: {
         position: 'absolute',

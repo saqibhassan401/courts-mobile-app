@@ -1,63 +1,64 @@
 import * as React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet,ScrollView, Text, View} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
+import Footer from './footer'
+import Header from "./header";
 
 
 const ClassAttendance = () => {
 
-    const items = [
+    const classAttendanceList = [
         {
-            "Tile": "Attendance"
+            "Title": "Attendance"
         },
         {
-            "Tile": "Homework"
+            "Title": "Homework"
         },
         {
-            "Tile": "Answers"
+            "Title": "Answers"
         },
         {
-            "Tile": "Binder"
+            "Title": "Binder"
         },
         {
-            "Tile": "DT"
+            "Title": "DT"
         },
         {
-            "Tile": "Mission"
+            "Title": "Mission"
         },
         {
-            "Tile": "DT"
+            "Title": "DT"
         },
         {
-            "Tile": "Presentation"
+            "Title": "Presentation"
         },
         {
-            "Tile": "Status"
+            "Title": "Status"
         },
         {
-            "Tile": "Attitude"
+            "Title": "Attitude"
         },
         {
-            "Tile": "Assignment"
+            "Title": "Assignment"
         },
         {
-            "Tile": "Note"
+            "Title": "Note"
         },
         {
-            "Tile": "Progress"
+            "Title": "Progress"
         }
     ]
 
     return (
+        <View>
+        <ScrollView>
         <View style={styles.container}>
             <LinearGradient
                 colors={['#33849B', '#1E4F5D', '#14343D']}
                 style={styles.background}
             />
             <View>
-                <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')}/>
-                    Brian
-                </Text>
+                <Header/>
             </View>
             <View>
                 <Text style={styles.main}>
@@ -76,9 +77,9 @@ const ClassAttendance = () => {
             </View>
             <View style={styles.btn2}>
                 {
-                    items.map((item, index) => (
+                    classAttendanceList.map((item, index) => (
                         <View style={styles.btn1} key={index}>
-                            <Text style={styles.attendance}>{item.Tile}</Text>
+                            <Text style={styles.attendance}>{item.Title}</Text>
                             <View style={styles.dropdownIcon}>
                                 <Image source={require('../assets/deopdownicon.png')}/>
                             </View>
@@ -87,11 +88,15 @@ const ClassAttendance = () => {
                 }
             </View>
         </View>
+        </ScrollView>
+        <Footer enabled={true}/>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        paddingBottom:110,
         flex: 1,
         backgroundColor: '#2A5A56',
     },
@@ -104,7 +109,7 @@ const styles = StyleSheet.create({
     },
     main: {
         textAlign: 'center',
-        marginTop: 80,
+        marginTop: 30,
         fontSize: 35,
         color: 'white',
         fontWeight: "bold"
@@ -136,7 +141,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     btn2: {
-        paddingTop: 20
+        paddingTop: 20,
+        paddingBottom:30
     },
     attendance: {
         color: 'white',

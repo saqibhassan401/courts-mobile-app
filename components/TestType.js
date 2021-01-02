@@ -2,7 +2,8 @@ import * as React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
 import {LinearGradient} from "expo-linear-gradient";
-
+import Header from "./header";
+import Footer from "./footer";
 
 const TestType = () => {
 
@@ -46,10 +47,7 @@ const TestType = () => {
                 style={styles.background}
             />
             <View>
-                <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')} />
-                    Brian
-                </Text>
+                <Header/>
             </View>
             <View>
                 <Text style={styles.main}>
@@ -72,6 +70,7 @@ const TestType = () => {
                     ))
                 }
             </View>
+            <Footer/>
         </View>
     );
 }

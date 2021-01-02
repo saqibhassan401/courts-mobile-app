@@ -1,21 +1,21 @@
 import * as React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet,ScrollView, Text, View} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
-
+import Header from "./header";
+import Footer from "./footer";
 
 const ClassAttendance = () => {
 
     return (
+        <View>
+        <ScrollView>
         <View style={styles.container}>
             <LinearGradient
                 colors={['#33849B', '#1E4F5D', '#14343D']}
                 style={styles.background}
             />
             <View>
-                <Text style={styles.paragraph}>
-                    <Image source={require('../assets/user.png')}/>
-                    Brian
-                </Text>
+                <Header/>
             </View>
             <View>
                 <Text style={styles.main}>
@@ -57,7 +57,7 @@ const ClassAttendance = () => {
                         Test B
                     </Text>
                 </View>
-                <View style={styles.test1}>
+                <View style={styles.test2}>
                     <Text style={styles.test}>
                         My score {"\n"}
                         Class agregate
@@ -72,14 +72,17 @@ const ClassAttendance = () => {
                 Note
             </Text>
             <View style={styles.Note}>
-
             </View>
+        </View>
+        </ScrollView>
+        <Footer/>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        paddingBottom:110,
         flex: 1,
         backgroundColor: '#2A5A56',
     },
@@ -107,8 +110,8 @@ const styles = StyleSheet.create({
     Note: {
         backgroundColor: '#29697B',
         width: '90%',
-        height: '25%',
-        alignSelf: 'center'
+        height:250,
+        alignSelf: 'center',
     },
     classroomName: {
         textAlign: 'center',
@@ -147,8 +150,14 @@ const styles = StyleSheet.create({
     test1: {
         width: '90%',
         color: 'white',
-        marginTop: 20,
-        padding: 6,
+        marginTop: 5,
+        alignSelf: 'center',
+        flexDirection: 'row',
+    },
+    test2:{
+        paddingTop: 5,
+        width: '90%',
+        color: 'white',
         alignSelf: 'center',
         flexDirection: 'row',
     },
@@ -165,13 +174,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#3589A1',
         textAlign: 'center',
         padding: 6,
-        marginRight: 10,
-        width: '50%'
+        marginRight: 5,
+        width: '49.5%'
     },
     dropdownIcon: {
         marginRight: 10,
         marginTop: 3,
         marginLeft: 50
-    }
+    },
+
 });
 export default ClassAttendance;
