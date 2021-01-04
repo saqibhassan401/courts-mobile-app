@@ -4,7 +4,6 @@ import MainLayout from "../../shared/layout/mainLayout";
 import styles from "./styles";
 
 const ResetPassword = ({navigation}) => {
-    console.log(navigation)
     const [currentPassword, onChangecurrentPassword] = React.useState('Current Password');
     const [NewPassword, onChangeNewPassword] = React.useState('New Password');
     const [RePassword, onChangeRePassword] = React.useState('Re-enter Password');

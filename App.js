@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 import axios from 'axios';
 import { Config } from './config/config';
-import Login from './components/login';
+import Login from './components/Auth/login';
 import TestResults from './components/TestResults/TestResults';
 import TestType from './components/TestTypes/TestType';
 import NotesList from "./components/NotesList/NotesList";
@@ -26,19 +26,15 @@ export default function App() {
         const getData = async () => {
             try {
                 const value = await AsyncStorage.getItem('@storage_Key')
-                console.log(value)
                 setIsSignedIn(value)
                 if (value !== null) {
-                    // value previously stored
                 }
             } catch (e) {
-                // error reading value
             }
         }
         getData()
     })
 
-    console.log(isSignedIn)
 
     return (
         <NavigationContainer>
@@ -48,7 +44,7 @@ export default function App() {
                 }}>
                         <Stack.Screen
                             name="login"
-                            component={NotesList}
+                            component={Login}
                         />
                         <Stack.Screen
                             name="TestResults"

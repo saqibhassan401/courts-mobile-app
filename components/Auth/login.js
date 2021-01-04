@@ -2,7 +2,6 @@ import {StatusBar} from 'expo-status-bar';
 import React, {useState} from 'react';
 import 'react-native-gesture-handler';
 import {
-    Button,
     StyleSheet,
     Text,
     View,
@@ -13,12 +12,11 @@ import {
 import * as SecureStore from 'expo-secure-store';
 import axios from 'axios';
 import {LinearGradient} from 'expo-linear-gradient';
-import {Config} from '../config/config';
+import {Config} from '../../config/config';
 
 axios.defaults.baseURL = Config.api_url;
 
 export default function Login({navigation}) {
-    console.log(navigation);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -31,11 +29,10 @@ export default function Login({navigation}) {
         };
 
         axios
-            .post(`/signin`, data)
+            .post(`/student/signin`, data)
             .then(({data}) => {
                 if (data) {
                     if (data.success) {
-                        console.log('succes', data);
                         SecureStore.setItemAsync('token', data.token);
                         SecureStore.setItemAsync('email', data.user.email);
                         SecureStore.setItemAsync('id', data.user._id);
@@ -45,13 +42,11 @@ export default function Login({navigation}) {
                         };
                         setSucces(true);
                     } else {
-                        console.log(data.message);
                         setError(data.message);
                     }
                 }
             })
             .catch((error) => {
-                console.log(error);
                 setError('Email or Password are incorrect !');
             });
     };
@@ -69,7 +64,7 @@ export default function Login({navigation}) {
                 colors={['#212558', '#204556', '#2A5A56']}
                 style={styles.background}
             />
-            <Image style={styles.image} source={require('../assets/icon.png')}/>
+            <Image style={styles.image} source={require('../../assets/icon.png')}/>
 
             <StatusBar style="light"/>
             <Text style={styles.error}>{error}</Text>

@@ -5,7 +5,6 @@ import 'react-native-gesture-handler';
 import styles from './styles';
 
 export default function Footer ({navigation}) {
-    console.log(navigation);
     return (
         <View style={styles.container}>
             <LinearGradient
