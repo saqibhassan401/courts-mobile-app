@@ -1,12 +1,11 @@
 import * as React from 'react';
 import {Image, StyleSheet,ScrollView, Text,Alert, View} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
-import Footer from './footer'
-import Header from "./header";
 import axios from 'axios'
-import {Config} from "../config/config";
-import { getCurrentFormatedDate } from '../config/utils';
-import MainLayout from "../shared/layout/mainLayout";
+import {Config} from "../../config/config";
+import { getCurrentFormatedDate } from '../../config/utils';
+import MainLayout from "../../shared/layout/mainLayout";
+import styles from './styles';
 
 axios.defaults.baseURL = Config.api_url;
 
@@ -87,16 +86,9 @@ const ClassAttendance = ({navigation}) => {
     console.log('attendance',attendance)
 
     return (
-        <MainLayout>
+        <MainLayout navigation={navigation}>
         <ScrollView>
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 {!!error && (
                     <Alert
@@ -128,7 +120,7 @@ const ClassAttendance = ({navigation}) => {
                         <View style={styles.btn1} key={index}>
                             <Text style={styles.attendance}>{item.Title}</Text>
                             <View style={styles.dropdownIcon}>
-                                <Image source={require('../assets/deopdownicon.png')}/>
+                                <Image source={require('../../assets/deopdownicon.png')}/>
                             </View>
                         </View>
                     ))
@@ -150,63 +142,4 @@ const ClassAttendance = ({navigation}) => {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        paddingBottom:110,
-        flex: 1,
-        backgroundColor: '#2A5A56',
-    },
-    paragraph: {
-        alignSelf: 'flex-end',
-        marginTop: 50,
-        fontSize: 20,
-        marginRight: 30,
-        color: 'white'
-    },
-    main: {
-        textAlign: 'center',
-        marginTop: 30,
-        fontSize: 35,
-        color: 'white',
-        fontWeight: "bold"
-    },
-    classroomName: {
-        textAlign: 'center',
-        color: 'white',
-        fontSize: 20,
-        marginTop: 30
-    },
-    background: {
-        position: 'absolute',
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-    },
-    btn: {
-        marginTop: 10
-    },
-    btn1: {
-        alignSelf: 'center',
-        backgroundColor: '#3589A1',
-        marginTop: 5,
-        width: '90%',
-        color: 'white',
-        padding: 6,
-        flexDirection: 'row',
-        justifyContent: "space-between"
-    },
-    btn2: {
-        paddingTop: 20,
-        paddingBottom:30
-    },
-    attendance: {
-        color: 'white',
-        fontSize: 18,
-    },
-    dropdownIcon: {
-        marginRight: 10,
-        marginTop: 3
-    }
-});
 export default ClassAttendance;

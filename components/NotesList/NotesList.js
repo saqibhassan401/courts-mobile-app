@@ -1,20 +1,14 @@
 import * as React from 'react';
 import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Constants from 'expo-constants';
-import {LinearGradient} from "expo-linear-gradient";
-import Header from "./header";
-import Footer from "./footer";
+import Footer from "../Footer/footer";
+import MainLayout from "../../shared/layout/mainLayout";
 
-const NotesList = (navigation) => {
+
+const NotesList = ({navigation}) => {
     return (
+        <MainLayout navigation={navigation}>
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 <Text style={styles.main}>
                     Note
@@ -45,9 +39,8 @@ const NotesList = (navigation) => {
                     <Text style={styles.assignmentSectionText}>1 2 3 ...> 10</Text>
                 </View>
             </View>
-            <Footer navigation={navigation}/>
         </View>
-
+        </MainLayout>
     );
 }
 
@@ -55,7 +48,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
     },
     input1: {
         flexDirection: 'row',
@@ -70,7 +62,6 @@ const styles = StyleSheet.create({
     },
     main: {
         textAlign: 'center',
-        marginTop: 50,
         fontSize: 35,
         color: 'white',
         fontWeight: "bold"
@@ -95,6 +86,7 @@ const styles = StyleSheet.create({
     },
     pagination: {
         marginTop: 20,
+        marginBottom:10,
         fontSize: 18,
         fontWeight: 'bold'
     }

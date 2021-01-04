@@ -7,19 +7,19 @@ const Stack = createStackNavigator();
 import axios from 'axios';
 import { Config } from './config/config';
 import Login from './components/login';
-import TestResults from './components/TestResults';
-import TestType from './components/TestType';
-import NotesList from "./components/NotesList";
-import NotesEdit from "./components/NotesEdit";
-import SchoolTest from './components/SchoolTest';
-import SchoolTestDetail from './components/SchoolTestDetail';
-import ClassAttendance from "./components/ClassAttendance";
-import ResetPassword from "./components/ResetPassword";
-import Footer from "./components/footer";
+import TestResults from './components/TestResults/TestResults';
+import TestType from './components/TestTypes/TestType';
+import NotesList from "./components/NotesList/NotesList";
+import NotesEdit from "./components/NotesEdit/NotesEdit";
+import SchoolTest from './components/SchoolTest/SchoolTest';
+import ClassAttendance from "./components/ClassAttendance/ClassAttendance";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
+import Footer from "./components/Footer/footer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import MainLayout from "./shared/layout/mainLayout";
 axios.defaults.baseURL = Config.api_url;
 
-export default function App(props) {
+export default function App() {
     const [isSignedIn,setIsSignedIn] = useState()
 
     useEffect(()=> {
@@ -48,7 +48,7 @@ export default function App(props) {
                 }}>
                         <Stack.Screen
                             name="login"
-                            component={Login}
+                            component={NotesList}
                         />
                         <Stack.Screen
                             name="TestResults"
@@ -67,10 +67,6 @@ export default function App(props) {
                             component={SchoolTest}
                         />
                         <Stack.Screen
-                            name="SchoolTestDetail"
-                            component={SchoolTestDetail}
-                        />
-                        <Stack.Screen
                             name="ClassAttendance"
                             component={ClassAttendance}
                         />
@@ -83,8 +79,8 @@ export default function App(props) {
                             component={ResetPassword}
                         />
                         <Stack.Screen
-                            name='Footer'
-                            component={Footer}
+                            name='MainLayout'
+                            component={MainLayout}
                         />
             </Stack.Navigator>
         </NavigationContainer>

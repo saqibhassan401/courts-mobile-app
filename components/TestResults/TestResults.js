@@ -1,20 +1,12 @@
 import * as React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
-import {LinearGradient} from "expo-linear-gradient";
-import Header from "./header";
-import Footer from "./footer";
+import MainLayout from "../../shared/layout/mainLayout";
 
-const TestResults = (navigation) => {
+const TestResults = ({navigation}) => {
     return (
+        <MainLayout navigation={navigation}>
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 <Text style={styles.main}>
                     Test Results
@@ -28,22 +20,18 @@ const TestResults = (navigation) => {
                     <Text style={styles.Stest1}>School Test</Text>
                 </View>
             </View>
-            <Footer navigation={navigation}/>
         </View>
+        </MainLayout>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
-        padding: 8,
     },
     paragraph: {
         alignSelf: 'flex-end',
-        marginTop: 30,
         fontSize: 20,
         marginRight: 30,
         color: 'white'
@@ -57,7 +45,6 @@ const styles = StyleSheet.create({
     },
     main: {
         textAlign: 'center',
-        marginTop: 80,
         fontSize: 35,
         fontWeight: "bold",
         color: 'white'

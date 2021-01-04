@@ -1,9 +1,7 @@
 import * as React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import Constants from 'expo-constants';
-import {LinearGradient} from "expo-linear-gradient";
-import Header from "./header";
-import Footer from "./footer";
+import MainLayout from "../../shared/layout/mainLayout";
 
 const TestType = () => {
 
@@ -40,15 +38,8 @@ const TestType = () => {
         },
     ]
     return (
+        <MainLayout>
         <View style={styles.container}>
-            <LinearGradient
-                // Background Linear Gradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 <Text style={styles.main}>
                     Test Type
@@ -70,8 +61,8 @@ const TestType = () => {
                     ))
                 }
             </View>
-            <Footer navigation={navigation}/>
         </View>
+        </MainLayout>
     );
 }
 

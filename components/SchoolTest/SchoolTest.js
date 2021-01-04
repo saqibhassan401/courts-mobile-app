@@ -1,21 +1,11 @@
 import * as React from 'react';
 import {Image, StyleSheet,ScrollView, Text, View} from 'react-native';
-import {LinearGradient} from "expo-linear-gradient";
-import Header from "./header";
-import Footer from "./footer";
+import MainLayout from "../../shared/layout/mainLayout";
 
 const ClassTest = (navigation) => {
     return (
-        <View>
+        <MainLayout>
         <ScrollView>
-        <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 <Text style={styles.main}>
                     SCHOOL TEST
@@ -33,7 +23,7 @@ const ClassTest = (navigation) => {
             </View>
             <View style={styles.btn1}>
                 <View style={styles.dropdownIcon}>
-                    <Image source={require('../assets/deopdownicon.png')}/>
+                    <Image source={require('../../assets/deopdownicon.png')}/>
                 </View>
                 <Text style={styles.testScore}>
                     Check my test score
@@ -41,7 +31,7 @@ const ClassTest = (navigation) => {
             </View>
             <View style={styles.evaluation}>
                 <View style={styles.dropdownIcon}>
-                    <Image source={require('../assets/deopdownicon.png')}/>
+                    <Image source={require('../../assets/deopdownicon.png')}/>
                 </View>
                 <Text style={styles.testScore}>
                     Evaluation (wt,ct,mt)
@@ -72,10 +62,8 @@ const ClassTest = (navigation) => {
             </Text>
             <View style={styles.Note}>
             </View>
-        </View>
         </ScrollView>
-            <Footer navigation={navigation}/>
-        </View>
+        </MainLayout>
     );
 }
 

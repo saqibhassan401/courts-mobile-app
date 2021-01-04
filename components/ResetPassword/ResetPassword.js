@@ -2,19 +2,17 @@ import * as React from 'react';
 import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Constants from 'expo-constants';
 import {LinearGradient} from "expo-linear-gradient";
-import {Input} from "react-native-elements";
+import MainLayout from "../../shared/layout/mainLayout";
 
-const ResetPassword = (props) => {
+const ResetPassword = ({navigation}) => {
+    console.log(navigation)
     const [currentPassword, onChangecurrentPassword] = React.useState('Current Password');
     const [NewPassword, onChangeNewPassword] = React.useState('New Password');
     const [RePassword, onChangeRePassword] = React.useState('Re-enter Password');
 
     return (
+        <MainLayout navigation={navigation}>
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
             <Text style={styles.main}>
                 USER {"\n"}
                 INFORMATION
@@ -24,7 +22,7 @@ const ResetPassword = (props) => {
             </Text>
             <View style={styles.InputFields}>
                 <View style={styles.image}>
-                    <Image source={require('../assets/padlock.png')}/>
+                    <Image source={require('../../assets/padlock.png')}/>
                     <TextInput
                         style={styles.Inputs}
                         onChangeText={text => currentPassword(text)}
@@ -32,7 +30,7 @@ const ResetPassword = (props) => {
                     />
                 </View>
                 <View style={styles.image}>
-                    <Image source={require('../assets/padlock.png')}/>
+                    <Image source={require('../../assets/padlock.png')}/>
                     <TextInput
                         style={styles.Inputs}
                         onChangeText={text => onChangeNewPassword(text)}
@@ -40,7 +38,7 @@ const ResetPassword = (props) => {
                     />
                 </View>
                 <View style={styles.image}>
-                    <Image source={require('../assets/padlock.png')}/>
+                    <Image source={require('../../assets/padlock.png')}/>
                     <TextInput
                         style={styles.Inputs}
                         onChangeText={text => onChangeRePassword(text)}
@@ -52,6 +50,7 @@ const ResetPassword = (props) => {
                 </TouchableOpacity>
             </View>
         </View>
+        </MainLayout>
 
     );
 }
@@ -60,19 +59,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
         padding: 8,
     },
     input1: {
         flexDirection: 'row',
         justifyContent: 'center',
-    },
-    paragraph: {
-        alignSelf: 'flex-end',
-        marginTop: 50,
-        fontSize: 20,
-        marginRight: 30,
-        color: 'white'
     },
     background: {
         position: 'absolute',
@@ -83,7 +74,6 @@ const styles = StyleSheet.create({
     },
     main: {
         textAlign: 'center',
-        marginTop: 170,
         fontSize: 35,
         color: 'white',
         fontWeight: "bold"

@@ -1,10 +1,7 @@
 import * as React from 'react';
 import {Image, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Constants from 'expo-constants';
-import {LinearGradient} from "expo-linear-gradient";
-import {Input} from "react-native-elements";
-import Header from "./header";
-import Footer from "./footer";
+import MainLayout from "../../shared/layout/mainLayout";
 
 const NotesEdit = (navigation) => {
     const [Date, onChangeDate] = React.useState('Date');
@@ -14,14 +11,8 @@ const NotesEdit = (navigation) => {
     const [TextBox, onChangeTextBox] = React.useState('Write Something');
 
     return (
+        <MainLayout>
         <View style={styles.container}>
-            <LinearGradient
-                colors={['#33849B', '#1E4F5D', '#14343D']}
-                style={styles.background}
-            />
-            <View>
-                <Header/>
-            </View>
             <View>
                 <Text style={styles.main}>
                     Note
@@ -57,9 +48,8 @@ const NotesEdit = (navigation) => {
                     />
                 </View>
             </View>
-            <Footer navigation={navigation}/>
         </View>
-
+        </MainLayout>
     );
 }
 
