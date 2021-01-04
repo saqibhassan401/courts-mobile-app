@@ -4,8 +4,7 @@ import {LinearGradient} from "expo-linear-gradient";
 import Header from "./header";
 import Footer from "./footer";
 
-const ClassAttendance = () => {
-
+const ClassTest = (navigation) => {
     return (
         <View>
         <ScrollView>
@@ -75,7 +74,7 @@ const ClassAttendance = () => {
             </View>
         </View>
         </ScrollView>
-        <Footer/>
+            <Footer navigation={navigation}/>
         </View>
     );
 }
@@ -184,4 +183,4 @@ const styles = StyleSheet.create({
     },
 
 });
-export default ClassAttendance;
+export default ClassTest;

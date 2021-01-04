@@ -6,7 +6,7 @@ import {Input} from "react-native-elements";
 import Header from "./header";
 import Footer from "./footer";
 
-const NotesEdit = (props) => {
+const NotesEdit = (navigation) => {
     const [Date, onChangeDate] = React.useState('Date');
     const [Time, onChangeTime] = React.useState('Time');
     const [Subject, onChangeSubject] = React.useState('Subject');
@@ -57,7 +57,7 @@ const NotesEdit = (props) => {
                     />
                 </View>
             </View>
-            <Footer/>
+            <Footer navigation={navigation}/>
         </View>
 
     );

@@ -5,7 +5,7 @@ import {LinearGradient} from "expo-linear-gradient";
 import Header from "./header";
 import Footer from "./footer";
 
-const TestResults = () => {
+const TestResults = (navigation) => {
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -28,7 +28,7 @@ const TestResults = () => {
                     <Text style={styles.Stest1}>School Test</Text>
                 </View>
             </View>
-            <Footer/>
+            <Footer navigation={navigation}/>
         </View>
     );
 }

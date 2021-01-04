@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {Image, StyleSheet, ScrollView, Text, View, TouchableOpacity} from 'react-native';
+import {Alert, Image, StyleSheet, ScrollView, Text, View, TouchableOpacity} from 'react-native';
 import {LinearGradient} from "expo-linear-gradient";
+import 'react-native-gesture-handler';
 
-
-const Footer = (props) => {
+export default function Footer ({navigation}) {
+    console.log('dsfsdf')
+    console.log(navigation);
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -12,10 +14,14 @@ const Footer = (props) => {
             />
             <View style={styles.footer}>
                 <View style={styles.alignImages}>
+                    <TouchableOpacity onPress={() => navigation.push('ClassAttendance')} >
                     <Image style={styles.image } source={require('../assets/profileIcon.png')}/>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.alignImages}>
-                    <Image style={styles.image} source={require('../assets/document.png')}/>
+                    <TouchableOpacity onPress={() => navigation.push('TestResults')} >
+                        <Image style={styles.image} source={require('../assets/document.png')}/>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.alignImages}>
                     <Image style={styles.image} source={require('../assets/notes.png')}/>
@@ -62,4 +68,3 @@ const styles = StyleSheet.create({
         maxWidth:'50%'
     }
 });
-export default Footer;

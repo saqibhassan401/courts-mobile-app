@@ -5,7 +5,7 @@ import {LinearGradient} from "expo-linear-gradient";
 import Header from "./header";
 import Footer from "./footer";
 
-const NotesList = (props) => {
+const NotesList = (navigation) => {
     return (
         <View style={styles.container}>
             <LinearGradient
@@ -45,7 +45,7 @@ const NotesList = (props) => {
                     <Text style={styles.assignmentSectionText}>1 2 3 ...> 10</Text>
                 </View>
             </View>
-            <Footer/>
+            <Footer navigation={navigation}/>
         </View>
 
     );

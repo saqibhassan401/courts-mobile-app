@@ -70,7 +70,7 @@ const TestType = () => {
                     ))
                 }
             </View>
-            <Footer/>
+            <Footer navigation={navigation}/>
         </View>
     );
 }

@@ -1,7 +1,6 @@
 import {StatusBar} from 'expo-status-bar';
 import React, {useState} from 'react';
 import 'react-native-gesture-handler';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     Button,
     StyleSheet,
@@ -14,11 +13,12 @@ import {
 import * as SecureStore from 'expo-secure-store';
 import axios from 'axios';
 import {LinearGradient} from 'expo-linear-gradient';
-import {Config} from '../config';
+import {Config} from '../config/config';
 
 axios.defaults.baseURL = Config.api_url;
 
-export default function Login(props) {
+export default function Login({navigation}) {
+    console.log(navigation);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -56,10 +56,10 @@ export default function Login(props) {
             });
     };
     if (succes) {
-        props.navigation.replace('ClassAttendance')
+        navigation.navigate('ClassAttendance')
     };
     const ResetPassword =()=>{
-        props.navigation.navigate('ResetPassword')
+        navigation.navigate('ResetPassword')
     }
 
 

@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 import axios from 'axios';
-import { Config } from './config';
+import { Config } from './config/config';
 import Login from './components/login';
 import TestResults from './components/TestResults';
 import TestType from './components/TestType';
@@ -15,6 +15,7 @@ import SchoolTest from './components/SchoolTest';
 import SchoolTestDetail from './components/SchoolTestDetail';
 import ClassAttendance from "./components/ClassAttendance";
 import ResetPassword from "./components/ResetPassword";
+import Footer from "./components/footer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 axios.defaults.baseURL = Config.api_url;
 
@@ -80,6 +81,10 @@ export default function App(props) {
                         <Stack.Screen
                             name="ResetPassword"
                             component={ResetPassword}
+                        />
+                        <Stack.Screen
+                            name='Footer'
+                            component={Footer}
                         />
             </Stack.Navigator>
         </NavigationContainer>
