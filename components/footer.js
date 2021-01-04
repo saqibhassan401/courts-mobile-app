@@ -14,12 +14,12 @@ export default function Footer ({navigation}) {
             />
             <View style={styles.footer}>
                 <View style={styles.alignImages}>
-                    <TouchableOpacity onPress={() => navigation.push('ClassAttendance')} >
+                    <TouchableOpacity onPress={() => navigation.navigate('ClassAttendance')} >
                     <Image style={styles.image } source={require('../assets/profileIcon.png')}/>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.alignImages}>
-                    <TouchableOpacity onPress={() => navigation.push('TestResults')} >
+                    <TouchableOpacity onPress={() => navigation.navigate('TestResults')} >
                         <Image style={styles.image} source={require('../assets/document.png')}/>
                     </TouchableOpacity>
                 </View>

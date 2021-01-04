@@ -6,6 +6,7 @@ import Header from "./header";
 import axios from 'axios'
 import {Config} from "../config/config";
 import { getCurrentFormatedDate } from '../config/utils';
+import MainLayout from "../shared/layout/mainLayout";
 
 axios.defaults.baseURL = Config.api_url;
 
@@ -86,7 +87,7 @@ const ClassAttendance = ({navigation}) => {
     console.log('attendance',attendance)
 
     return (
-        <View>
+        <MainLayout>
         <ScrollView>
         <View style={styles.container}>
             <LinearGradient
@@ -145,8 +146,7 @@ const ClassAttendance = ({navigation}) => {
                 </Alert>
             )}
         </ScrollView>
-        <Footer navigation={navigation}/>
-        </View>
+        </MainLayout>
     );
 }
 
